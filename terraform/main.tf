@@ -11,6 +11,23 @@ resource "google_pubsub_topic" "ad_events" {
     #depends_on = [google_project_service.pubsub_api] ----- dependeria de esto , pero ya tengo habilitada la api de pubsub en mi proyecto
   
 }
+# --- NUEVO BLOQUE: La Suscripción para Dataflow ---
+resource "google_pubsub_subscription" "dataflow_subscription" {
+  name    = "ad-events-dataflow-subscription"
+  topic   = google_pubsub_topic.ad_events.name # Lo conectamos al tópico
+  project = var.gcp_proyecto_id
+
+  # Configuración de Retención de Mensajes
+  # Le decimos a Pub/Sub que guarde los mensajes no leídos hasta 7 días.
+  message_retention_duration = "604800s" 
+
+  # Le damos 5 minutos a nuestro consumidor para procesar un mensaje
+  # antes de que Pub/Sub lo vuelva a entregar.
+  ack_deadline_seconds = 300
+
+  # Nos aseguramos de que se cree DESPUÉS de que el tópico exista.
+  depends_on = [google_pubsub_topic.ad_events]
+}
 
 
 # --- . La Bestia de Baja Latencia (Bigtable) ---
