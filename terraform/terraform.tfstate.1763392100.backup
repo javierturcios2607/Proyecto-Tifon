@@ -1,0 +1,239 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.4",
+  "serial": 14,
+  "lineage": "150fb6a2-ae86-88d9-cb15-865bd6bd98e4",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "google_bigquery_dataset",
+      "name": "tifon_dataset",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": [
+              {
+                "condition": [],
+                "dataset": [],
+                "domain": "",
+                "group_by_email": "",
+                "iam_member": "",
+                "role": "OWNER",
+                "routine": [],
+                "special_group": "",
+                "user_by_email": "data-engineer-vm-sa@riverajavier-dev.iam.gserviceaccount.com",
+                "view": []
+              },
+              {
+                "condition": [],
+                "dataset": [],
+                "domain": "",
+                "group_by_email": "",
+                "iam_member": "",
+                "role": "OWNER",
+                "routine": [],
+                "special_group": "projectOwners",
+                "user_by_email": "",
+                "view": []
+              },
+              {
+                "condition": [],
+                "dataset": [],
+                "domain": "",
+                "group_by_email": "",
+                "iam_member": "",
+                "role": "READER",
+                "routine": [],
+                "special_group": "projectReaders",
+                "user_by_email": "",
+                "view": []
+              },
+              {
+                "condition": [],
+                "dataset": [],
+                "domain": "",
+                "group_by_email": "",
+                "iam_member": "",
+                "role": "WRITER",
+                "routine": [],
+                "special_group": "projectWriters",
+                "user_by_email": "",
+                "view": []
+              }
+            ],
+            "creation_time": 1763389657864,
+            "dataset_id": "tifon_analytics_dataset",
+            "default_collation": "",
+            "default_encryption_configuration": [],
+            "default_partition_expiration_ms": 0,
+            "default_table_expiration_ms": 0,
+            "delete_contents_on_destroy": false,
+            "description": "Dataset para el almacenamiento de datos analíticos del Proyecto Tifón.",
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "etag": "Gv/uy04oY0iPrc7tGUl1ZA==",
+            "external_catalog_dataset_options": [],
+            "external_dataset_reference": [],
+            "friendly_name": "",
+            "id": "projects/riverajavier-dev/datasets/tifon_analytics_dataset",
+            "is_case_insensitive": false,
+            "labels": {},
+            "last_modified_time": 1763389657864,
+            "location": "us-central1",
+            "max_time_travel_hours": "168",
+            "project": "riverajavier-dev",
+            "resource_tags": {},
+            "self_link": "https://bigquery.googleapis.com/bigquery/v2/projects/riverajavier-dev/datasets/tifon_analytics_dataset",
+            "storage_billing_model": "",
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_bigquery_table",
+      "name": "ad_events_historical",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "biglake_configuration": [],
+            "clustering": null,
+            "creation_time": 1763389658186,
+            "dataset_id": "tifon_analytics_dataset",
+            "deletion_protection": true,
+            "description": "",
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "encryption_configuration": [],
+            "etag": "c/ogZls6B/+o97NkrumIhg==",
+            "expiration_time": 0,
+            "external_catalog_table_options": [],
+            "external_data_configuration": [],
+            "friendly_name": "",
+            "generated_schema_columns": "",
+            "id": "projects/riverajavier-dev/datasets/tifon_analytics_dataset/tables/ad_events_historical",
+            "ignore_auto_generated_schema": false,
+            "ignore_schema_changes": null,
+            "labels": {},
+            "last_modified_time": 1763389658227,
+            "location": "us-central1",
+            "materialized_view": [],
+            "max_staleness": "",
+            "num_bytes": 0,
+            "num_long_term_bytes": 0,
+            "num_rows": 0,
+            "project": "riverajavier-dev",
+            "range_partitioning": [],
+            "require_partition_filter": false,
+            "resource_tags": {},
+            "schema": "[{\"mode\":\"NULLABLE\",\"name\":\"user_id\",\"type\":\"STRING\"},{\"mode\":\"NULLABLE\",\"name\":\"event_type\",\"type\":\"STRING\"},{\"mode\":\"NULLABLE\",\"name\":\"product_id\",\"type\":\"STRING\"},{\"mode\":\"NULLABLE\",\"name\":\"event_timestamp\",\"type\":\"TIMESTAMP\"},{\"mode\":\"NULLABLE\",\"name\":\"revenue\",\"type\":\"FLOAT\"}]",
+            "schema_foreign_type_info": [],
+            "self_link": "https://bigquery.googleapis.com/bigquery/v2/projects/riverajavier-dev/datasets/tifon_analytics_dataset/tables/ad_events_historical",
+            "table_constraints": [],
+            "table_id": "ad_events_historical",
+            "table_metadata_view": null,
+            "table_replication_info": [],
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "time_partitioning": [],
+            "type": "TABLE",
+            "view": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "google_bigquery_dataset.tifon_dataset"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_global_address",
+      "name": "redis_private_ip",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address": "10.80.0.0",
+            "address_type": "INTERNAL",
+            "creation_timestamp": "2025-11-17T06:38:25.569-08:00",
+            "description": "",
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "id": "projects/riverajavier-dev/global/addresses/redis-private-ip-range",
+            "ip_version": "",
+            "label_fingerprint": "vezUS-42LLM=",
+            "labels": {},
+            "name": "redis-private-ip-range",
+            "network": "https://www.googleapis.com/compute/v1/projects/riverajavier-dev/global/networks/default",
+            "prefix_length": 16,
+            "project": "riverajavier-dev",
+            "purpose": "VPC_PEERING",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/riverajavier-dev/global/addresses/redis-private-ip-range",
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_pubsub_topic",
+      "name": "ad_events",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "id": "projects/riverajavier-dev/topics/ad-events-topic",
+            "ingestion_data_source_settings": [],
+            "kms_key_name": "",
+            "labels": {},
+            "message_retention_duration": "",
+            "message_storage_policy": [],
+            "message_transforms": [],
+            "name": "ad-events-topic",
+            "project": "riverajavier-dev",
+            "schema_settings": [],
+            "tags": null,
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

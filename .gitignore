@@ -1,0 +1,36 @@
+# =============== #
+#    TERRAFORM
+# =============== #
+# Ignorar el estado local y los backups. ¡MUY IMPORTANTE!
+*.tfstate
+*.tfstate.backup
+
+# Ignorar logs de errores
+crash.log
+*.tflog
+
+# Ignorar el directorio de plugins y módulos
+.terraform/
+
+# Ignorar archivos de plan que se guardan localmente
+*.tfplan
+
+# Ignorar overrides de variables que no deben ser versionados
+*.tfvars
+*.tfvars.json
+
+# Ignorar configuraciones locales del CLI
+.terraformrc
+terraform.rc
+
+
+# =============== #
+#   S.O. Y EDITORES
+# =============== #
+# Archivos de configuración de VS Code
+.vscode/
+
+# Archivos de sistema de macOS, Windows y Linux
+.DS_Store
+Thumbs.db
+*~
